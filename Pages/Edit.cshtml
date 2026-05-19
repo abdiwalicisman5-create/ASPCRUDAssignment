@@ -1,0 +1,24 @@
+@page
+@model Assignment.Pages.EditModel
+
+<h2>Edit Order</h2>
+
+<form method="post">
+
+    <input type="hidden" asp-for="Order.Id" />
+
+    <input asp-for="Order.CustomerName" class="form-control mb-2" placeholder="Customer Name" />
+
+    <input asp-for="Order.ProductName" class="form-control mb-2" placeholder="Product Name" />
+
+    <input asp-for="Order.Quantity" class="form-control mb-2" placeholder="Quantity" />
+
+    <input asp-for="Order.Price" class="form-control mb-2" placeholder="Price" />
+
+    <input asp-for="Order.OrderDate" type="date" class="form-control mb-2" />
+
+    <button type="submit" class="btn btn-primary">
+        Update
+    </button>
+
+</form>

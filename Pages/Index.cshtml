@@ -1,0 +1,53 @@
+﻿@page
+@model Assignment.Pages.IndexModel
+
+<h1 class="mb-3">Order List</h1>
+
+<div class="d-flex justify-content-end mb-3">
+    <a asp-page="Create" class="btn btn-success">
+        Add New Order
+    </a>
+</div>
+
+<table class="table table-bordered table-striped">
+
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Customer</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model.Orders)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.CustomerName</td>
+                <td>@item.ProductName</td>
+                <td>@item.Quantity</td>
+                <td>@item.Price</td>
+                <td>@item.OrderDate</td>
+
+                <td>
+                    <a asp-page="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">
+                        Edit
+                    </a>
+
+                    <a asp-page="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        
+        }
+
+    </tbody>
+
+</table>

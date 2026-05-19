@@ -1,0 +1,25 @@
+@page
+@model Assignment.Pages.DeleteModel
+
+<h2>Delete Order</h2>
+
+<h4>Are you sure?</h4>
+
+<div>
+    <p>@Model.Order.CustomerName</p>
+    <p>@Model.Order.ProductName</p>
+</div>
+
+<form method="post">
+
+    <input type="hidden" asp-for="Order.Id" />
+
+    <button type="submit" class="btn btn-danger">
+        Delete
+    </button>
+
+    <a asp-page="Index" class="btn btn-secondary">
+        Cancel
+    </a>
+
+</form>
